@@ -4,6 +4,7 @@ pragma solidity 0.6.10;
 import "@openzeppelin/contracts/math/SafeMath.sol";
 import "./ValTokenWithHook.sol";
 import "./ClaimableContract.sol";
+import {ITimeLockRegistry} from "./ITimeLockRegistry.sol";
 
 /**
  * @title TimeLockedToken
@@ -30,6 +31,8 @@ import "./ClaimableContract.sol";
  */
 abstract contract TimeLockedToken is ValTokenWithHook, ClaimableContract {
     using SafeMath for uint256;
+
+    event LockupRegisteredFromRegistry(ITimeLockRegistry registry, uint256 from, uint256 to);
 
     // represents total distribution for locked balances
     mapping(address => uint256) distribution;
@@ -87,7 +90,7 @@ abstract contract TimeLockedToken is ValTokenWithHook, ClaimableContract {
      * @dev Transfer tokens to another account under the lockup schedule
      * Emits a transfer event showing a transfer to the recipient
      */
-    function registerLockup(address recipient, uint256 amount) external {
+    function registerLockup(address recipient, uint256 amount) public {
         require(balanceOf[msg.sender] > amount, "insufficient balance");
         require(distribution[recipient] == 0, "distribution already set");
 
@@ -99,6 +102,22 @@ abstract contract TimeLockedToken is ValTokenWithHook, ClaimableContract {
 
         // show transfer from sender to recipient
         emit Transfer(msg.sender, recipient, amount);
+    }
+
+    function registerLockupsFromRegistry(ITimeLockRegistry _registry) external {
+        registerLockupsFromRegistry(_registry, 0, _registry.count());
+    }
+
+    function registerLockupsFromRegistry(
+        ITimeLockRegistry _registry,
+        uint256 from,
+        uint256 to
+    ) public {
+        for (uint256 i = from; i < to; i++) {
+            (uint256 value, address recipient) = _registry.getDistribution(i);
+            registerLockup(recipient, value);
+        }
+        emit LockupRegisteredFromRegistry(_registry, from, to);
     }
 
     /**
