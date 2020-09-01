@@ -7,15 +7,18 @@ import {ICurvePool} from "./ICurvePool.sol";
 
 contract TrueCurvePool is TrueFiPool, LiquidityMiner {
     ICurvePool public curvePool;
+    IERC20 tru;
     uint8 constant N_TOKENS = 4;
     uint8 constant TUSD_INDEX = 3;
 
     constructor(
         ICurvePool _curve,
         IERC20 token,
+        IERC20 _tru,
         uint256 startingBlock
     ) public TrueFiPool(token, "TrueCurvePool", "TCP") LiquidityMiner(startingBlock) {
         curvePool = _curve;
+        tru = _tru;
         token.approve(address(curvePool), uint256(-1));
         curvePool.token().approve(address(curvePool), uint256(-1));
     }
@@ -50,6 +53,16 @@ contract TrueCurvePool is TrueFiPool, LiquidityMiner {
         return curvePool.calc_withdraw_one_coin(1 ether, TUSD_INDEX);
     }
 
+    function _transfer(
+        address sender,
+        address recipient,
+        uint256 amount
+    ) internal override {
+        updateRewards(sender);
+        updateRewards(recipient);
+        super._transfer(sender, recipient, amount);
+    }
+
     function updateRewards(address account) public override {
         updateRewardDistribution(totalSupply());
         Reward storage reward = rewards[account];
@@ -57,5 +70,10 @@ contract TrueCurvePool is TrueFiPool, LiquidityMiner {
             balanceOf(account).mul(cumulatedRewardPerToken.sub(reward.lastUpdateDistribution)).div(PRECISION)
         );
         reward.lastUpdateDistribution = cumulatedRewardPerToken;
+    }
+
+    function claim() external override {
+        updateRewards(msg.sender);
+        require(tru.transfer(msg.sender, getReward(msg.sender)));
     }
 }

@@ -20,6 +20,7 @@ describe('Curve Pool', () => {
   let acc2: Wallet
   let acc3: Wallet
   let token: MockErc20Token
+  let trustToken: MockErc20Token
   let cTUSD: Erc20
   let curve: MockCurvePool
   let pool: TrueCurvePoolUnderTest
@@ -30,25 +31,40 @@ describe('Curve Pool', () => {
     [owner, acc1, acc2, acc3] = wallets
     provider = _provider
     token = await new MockErc20TokenFactory(owner).deploy()
+    trustToken = await new MockErc20TokenFactory(owner).deploy()
     await token.mint(owner.address, parseEther('1'))
     curve = await new MockCurvePoolFactory(owner).deploy(token.address)
     cTUSD = Erc20Factory.connect(await curve.token(), owner)
     startingBlock = await provider.getBlockNumber() + 5
-    pool = await new TrueCurvePoolUnderTestFactory(owner).deploy(curve.address, token.address, startingBlock)
+    pool = await new TrueCurvePoolUnderTestFactory(owner).deploy(curve.address, token.address, trustToken.address, startingBlock)
+    await trustToken.mint(pool.address, parseEther('1'))
   })
 
   const unPrecise = (amount: BigNumber) => amount.div(parseUnits('1', 33))
 
-  async function join(who: Wallet, amount: BigNumber) {
+  async function join (who: Wallet, amount: BigNumber) {
     await token.connect(who).approve(pool.address, amount)
     const joinTx = await pool.connect(who).join(amount)
     return (await provider.getTransaction(joinTx.hash)).blockNumber
   }
 
-  async function exit(who: Wallet, amount: BigNumber) {
+  async function exit (who: Wallet, amount: BigNumber) {
     const exitTx = await pool.connect(who).exit(amount)
     return (await provider.getTransaction(exitTx.hash)).blockNumber
   }
+
+  async function update (who: Wallet) {
+    const tx = await pool.updateRewards(who.address)
+    return (await provider.getTransaction(tx.hash)).blockNumber
+  }
+
+  async function transfer (from: Wallet, to: Wallet, amount: BigNumber) {
+    const tx = await pool.connect(from).transfer(to.address, amount)
+    return (await provider.getTransaction(tx.hash)).blockNumber
+  }
+
+  const rewardForInterval = async (from: number, to: number) =>
+    unPrecise(await pool.testRewardForInterval(from - startingBlock, to - startingBlock))
 
   describe('joining', () => {
     it('correctly transfers tokens', async () => {
@@ -101,7 +117,7 @@ describe('Curve Pool', () => {
     it('sums to total TRU pool with step 100000', async () => {
       let sum = Zero
       let lastReward = MaxUint256
-      const totalBlocks = await pool.TOTAL_BLOCKS()
+      const totalBlocks = (await pool.TOTAL_BLOCKS()).toNumber()
 
       for (let i = 0; i < totalBlocks; i += 100000) {
         const newReward = await pool.testRewardForInterval(i, Math.min(i + 100000, totalBlocks))
@@ -172,38 +188,155 @@ describe('Curve Pool', () => {
       expect(await pool.getReward(owner.address)).to.equal(unPrecise(expectedReward))
     })
 
-    it.only('properly distributes reward to a multiple participants', async () => {
+    async function testClaiming (wallets: Wallet[], rewards: BigNumber[]) {
+      let i = 0
+      for (const wallet of wallets) {
+        await pool.connect(wallet).claim()
+        expect(await trustToken.balanceOf(wallet.address)).to.equal(rewards[i++])
+      }
+    }
+
+    it('properly distributes reward to a multiple participants (same stakes)', async () => {
+      // #1: 1-100% 2-0% 3-0%
+      // #2: 1-50% 2-50% 3-0%
+      // #3: 1-33% 2-33% 3-33%
+      // #4: 1-50% 2-50% 3-0%
+      // #5: 1-100% 2-0% 3-0%
+
       const join1BlockNumber = await join(acc1, parseEther('1'))
       const join2BlockNumber = await join(acc2, parseEther('1'))
-      // const join3BlockNumber = await join(acc3, parseEther('1'))
+      const join3BlockNumber = await join(acc3, parseEther('1'))
 
-      // const exit3BlockNumber = await exit(acc3, parseEther('1'))
-      // const exit2BlockNumber = await exit(acc2, parseEther('1'))
+      const exit3BlockNumber = await exit(acc3, parseEther('1'))
+      const exit2BlockNumber = await exit(acc2, parseEther('1'))
       const exit1BlockNumber = await exit(acc1, parseEther('1'))
-      console.log(join1BlockNumber, join2BlockNumber, exit1BlockNumber)
-      let blockRewards: BigNumber[] = []
-      for (let i = join1BlockNumber; i < exit1BlockNumber; i++) {
-        blockRewards.push(unPrecise(await pool.testRewardForInterval(i - startingBlock, i + 1 - startingBlock)))
-      }
+      const blockRewards = [
+        await rewardForInterval(join1BlockNumber, join2BlockNumber),
+        await rewardForInterval(join2BlockNumber, join3BlockNumber),
+        await rewardForInterval(join3BlockNumber, exit3BlockNumber),
+        await rewardForInterval(exit3BlockNumber, exit2BlockNumber),
+        await rewardForInterval(exit2BlockNumber, exit1BlockNumber),
+      ]
       const expectedReward1 = blockRewards[0]
-        .add(blockRewards[1])
-        .add(blockRewards[2])
-      // .add(blockRewards[1].div(2))
-      // .add(blockRewards[2].div(3))
-      // .add(blockRewards[3].div(3))
-      // .add(blockRewards[4].div(2))
-      // .add(blockRewards[5])
+        .add(blockRewards[1].div(2))
+        .add(blockRewards[2].div(3))
+        .add(blockRewards[3].div(2))
+        .add(blockRewards[4])
+        .add(2)
       expect(await pool.getReward(acc1.address)).to.equal(expectedReward1)
-      // const expectedRewardInBlock1 = await pool.testRewardForInterval(bn - 2, bn - 1)
-      // const expectedRewardInBlock2 = await pool.testRewardForInterval(bn, bn + 1)
-      // const expectedRewardInBlock3 = await pool.testRewardForInterval(bn - 1, bn + 1)
+
+      const expectedReward2 = blockRewards[1].div(2)
+        .add(blockRewards[2].div(3))
+        .add(blockRewards[3].div(2))
+      expect(await pool.getReward(acc2.address)).to.equal(expectedReward2)
+
+      const expectedReward3 = blockRewards[2].div(3)
+      expect(await pool.getReward(acc3.address)).to.equal(expectedReward3)
+
+      expect((await pool.getReward(acc1.address)).add(await pool.getReward(acc2.address)).add(await pool.getReward(acc3.address)))
+        .to.equal((await rewardForInterval(join1BlockNumber, exit1BlockNumber)).sub(1))
+
+      await testClaiming([acc1, acc2, acc3], [expectedReward1, expectedReward2, expectedReward3])
+    })
+
+    it('properly distributes reward to a multiple participants (different stakes)', async () => {
+      // #1: 1-100% 2-0% 3-0%
+      // #2: 1-80% 2-20% 3-0%
+      // #3: 1-50% 2-12.5% 3-37.5%
+      // #4: 1-0% 2-25% 3-75%
+      // #5: 1-0% 2-100% 3-0%
+
+      const join1BlockNumber = await join(acc1, parseEther('1'))
+      const join2BlockNumber = await join(acc2, parseEther('0.25'))
+      const join3BlockNumber = await join(acc3, parseEther('0.75'))
+
+      const exit1BlockNumber = await exit(acc1, parseEther('1'))
+      const exit3BlockNumber = await exit(acc3, parseEther('0.75'))
+      const exit2BlockNumber = await exit(acc2, parseEther('0.25'))
+      const blockRewards = [
+        await rewardForInterval(join1BlockNumber, join2BlockNumber),
+        await rewardForInterval(join2BlockNumber, join3BlockNumber),
+        await rewardForInterval(join3BlockNumber, exit1BlockNumber),
+        await rewardForInterval(exit1BlockNumber, exit3BlockNumber),
+        await rewardForInterval(exit3BlockNumber, exit2BlockNumber),
+      ]
+      const expectedReward1 = blockRewards[0]
+        .add(blockRewards[1].mul(4).div(5))
+        .add(blockRewards[2].div(2))
+        .add(1)
+      expect(await pool.getReward(acc1.address)).to.equal(expectedReward1)
+
+      const expectedReward2 = blockRewards[1].div(5)
+        .add(blockRewards[2].div(8))
+        .add(blockRewards[3].div(4))
+        .add(blockRewards[4])
+        .add(1)
+      expect(await pool.getReward(acc2.address)).to.equal(expectedReward2)
+
+      const expectedReward3 = blockRewards[2].mul(3).div(8)
+        .add(blockRewards[3].mul(3).div(4))
+        .add(1)
+      expect(await pool.getReward(acc3.address)).to.equal(expectedReward3)
+
+      expect((await pool.getReward(acc1.address)).add(await pool.getReward(acc2.address)).add(await pool.getReward(acc3.address)))
+        .to.equal((await rewardForInterval(join1BlockNumber, exit2BlockNumber)).sub(2))
+
+      await testClaiming([acc1, acc2, acc3], [expectedReward1, expectedReward2, expectedReward3])
+    })
+
+    it('properly distributes reward to a multiple participants (adding stake)', async () => {
+      // #1: 1-100% 2-0%
+      // #2: 1-50% 2-50%
+      // #3: 1-75% 2-25%
+
+      const join1BlockNumber = await join(acc1, parseEther('0.25'))
+      const join2BlockNumber = await join(acc2, parseEther('0.25'))
+      const join3BlockNumber = await join(acc1, parseEther('0.50'))
+
+      const update1 = await update(acc1)
+      const update2 = await update(acc2)
+      const blockRewards = [
+        await rewardForInterval(join1BlockNumber, join2BlockNumber),
+        await rewardForInterval(join2BlockNumber, join3BlockNumber),
+        await rewardForInterval(join3BlockNumber, update1),
+        await rewardForInterval(join3BlockNumber, update2),
+      ]
+      const expectedReward1 = blockRewards[0]
+        .add(blockRewards[1].div(2))
+        .add(blockRewards[2].mul(3).div(4))
+      expect(await pool.getReward(acc1.address)).to.equal(expectedReward1.add(1))
+      const expectedReward2 = blockRewards[1].div(2)
+        .add(blockRewards[3].div(4))
+      expect(await pool.getReward(acc2.address)).to.equal(expectedReward2)
+    })
+
+    it('properly distributes reward after transfer', async () => {
+      // #1: 1-100% 2-0%
+      // #2: 1-50% 2-50%
+      // #3: 1-0% 2-100%
+
+      const joinBlockNumber = await join(acc1, parseEther('1'))
+      const transfer1BlockNumber = await transfer(acc1, acc2, parseEther('0.5'))
+      const transfer2BlockNumber = await transfer(acc1, acc2, parseEther('0.5'))
+      const exitBlockNumber = await exit(acc2, parseEther('1'))
+
+      const blockRewards = [
+        await rewardForInterval(joinBlockNumber, transfer1BlockNumber),
+        await rewardForInterval(transfer1BlockNumber, transfer2BlockNumber),
+        await rewardForInterval(transfer2BlockNumber, exitBlockNumber),
+      ]
+
+      const expectedReward1 = blockRewards[0]
+        .add(blockRewards[1].div(2))
+      expect(await pool.getReward(acc1.address)).to.equal(expectedReward1)
+      const expectedReward2 = blockRewards[1].div(2)
+        .add(blockRewards[2])
+      expect(await pool.getReward(acc2.address)).to.equal(expectedReward2)
+
+      expect((await pool.getReward(acc1.address)).add(await pool.getReward(acc2.address)))
+        .to.equal((await rewardForInterval(joinBlockNumber, exitBlockNumber)).sub(2))
+
+      await testClaiming([acc1, acc2], [expectedReward1, expectedReward2])
     })
   })
 })
-
-// #1: 1-100% 2-0% 3-0%
-// #2: 1-50% 2-50% 3-0%
-// #3: 1-33% 2-33% 3-33%
-// #4: 1-33% 2-33% 3-33%
-// #5: 1-50% 2-50% 3-0%
-// #6: 1-100% 2-0% 3-0%

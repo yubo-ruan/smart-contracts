@@ -47,9 +47,11 @@ abstract contract LiquidityMiner {
         lastUpdateBlock = currentBlock;
     }
 
-    function updateRewards(address account) public virtual;
-
     function getReward(address account) public view returns (uint256) {
         return rewards[account].amount;
     }
+
+    function claim() external virtual;
+
+    function updateRewards(address account) public virtual;
 }
