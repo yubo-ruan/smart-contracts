@@ -44,7 +44,7 @@ contract TrueFarm {
     }
 
     modifier update() {
-        uint256 totalBlockReward = trueDistributor.distribute(address(this));
+        uint256 totalBlockReward = trueDistributor.distribute();
         if (totalStaked > 0) {
             cumulativeRewardPerToken += totalBlockReward.div(totalStaked);
         }

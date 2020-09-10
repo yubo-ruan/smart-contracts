@@ -9,4 +9,8 @@ contract MockDistributor is TrueDistributor {
     function rewardFormula(uint256 fromBlock, uint256 toBlock) internal override pure returns (uint256) {
         return toBlock.sub(fromBlock).mul(PRECISION).mul(100);
     }
+
+    function epochLength() internal override pure returns (uint256) {
+        return 1;
+    }
 }

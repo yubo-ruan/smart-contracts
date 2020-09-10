@@ -68,7 +68,7 @@ describe('TrueDistributor', () => {
       await expectBlock(3)
       await skipBlocks(4)
       await expectBlock(7)
-      await distributor.distribute(owner.address)
+      await distributor.distribute()
       await expectBlock(8)
 
       expect(await distributor.getLastDistributionBlock(owner.address)).to.equal(8)
@@ -77,7 +77,7 @@ describe('TrueDistributor', () => {
     it('should transfer tokens to share holder', async () => {
       const expectedReward = await distributor.reward(0, 7)
       await skipBlocks(3)
-      await distributor.distribute(owner.address)
+      await distributor.distribute()
       await expectBlock(7)
 
       expect(await trustToken.balanceOf(owner.address))
@@ -91,7 +91,7 @@ describe('TrueDistributor', () => {
       await expectBlock(4)
 
       await skipBlocks(2)
-      await distributor.distribute(owner.address)
+      await distributor.distribute()
       await expectBlock(7)
 
       const expectedOwnersReward = (await distributor.reward(0, 4))
@@ -101,7 +101,7 @@ describe('TrueDistributor', () => {
         .to.equal(normaliseRewardToTrustTokens(expectedOwnersReward))
 
       await skipBlocks(3)
-      await distributor.distribute(farm.address)
+      await distributor.connect(farm).distribute()
       await expectBlock(11)
       const expectedFarmsReward = (await distributor.reward(4, 11)).div(2)
 
@@ -113,13 +113,13 @@ describe('TrueDistributor', () => {
       const expectedReward = await distributor.reward(8, 11)
 
       await skipBlocks(4)
-      await distributor.distribute(owner.address)
+      await distributor.distribute()
       await expectBlock(8)
 
       const balanceBeforeSecondDistribution = await trustToken.balanceOf(owner.address)
 
       await skipBlocks(2)
-      await distributor.distribute(owner.address)
+      await distributor.distribute()
       await expectBlock(11)
 
       const balanceAfterSecondDistribution = await trustToken.balanceOf(owner.address)
@@ -158,11 +158,16 @@ describe('TrueDistributor', () => {
       const someAmountOfShares = 2500000
       await distributor.transfer(owner.address, farm.address, someAmountOfShares)
       await skipBlocks(5)
-
+      await distributor.distribute()
+      await distributor.connect(farm).distribute()
       const ownerBalanceBeforeTransfer = await trustToken.balanceOf(owner.address)
       const farmBalanceBeforeTransfer = await trustToken.balanceOf(farm.address)
 
       await distributor.transfer(farm.address, owner.address, someAmountOfShares)
+      await skipBlocks(5)
+
+      await distributor.distribute()
+      await distributor.connect(farm).distribute()
 
       const ownerBalanceAfterTransfer = await trustToken.balanceOf(owner.address)
       const farmBalanceAfterTransfer = await trustToken.balanceOf(farm.address)
