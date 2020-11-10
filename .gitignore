@@ -1,5 +1,6 @@
 /node_modules
-/build
+**/build
+./graph/generated
 /flat-contracts
 /cache
 

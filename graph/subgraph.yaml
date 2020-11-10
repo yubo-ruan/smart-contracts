@@ -1,0 +1,43 @@
+specVersion: 0.0.2
+description: TrueFi
+repository: https://github.com/trusttoken/smart-contracts
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum/contract
+    name: LoanFactory
+    network: mainnet
+    source:
+      address: "0xDF06980C212182C21E4aA523107Bf04996347DaC"
+      abi: LoanFactory
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.1
+      language: wasm/assemblyscript
+      entities:
+        - LoanToken
+      abis:
+        - name: LoanFactory
+          file: ../build/LoanFactory.json
+        - name: LoanToken
+          file: ../build/LoanToken.json
+      eventHandlers:
+        - event: LoanTokenCreated(address)
+          handler: handleNewToken
+      file: ./mapping.ts
+#templates:
+#  - name: LoanToken
+#    kind: ethereum/contract
+#    network: mainnet
+#    source:
+#      abi: LoanToken
+#    mapping:
+#      kind: ethereum/events
+#      apiVersion: 0.0.1
+#      language: wasm/assemblyscript
+#      file: ./mapping.ts
+#      entities:
+#        - LoanToken
+#      abis:
+#        - name: LoanToken
+#          file: ../build/LoanToken.json

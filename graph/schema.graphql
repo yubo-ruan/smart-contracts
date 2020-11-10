@@ -1,0 +1,11 @@
+type LoanToken @entity {
+    id: ID!
+    address: Bytes!
+    borrower: Bytes!
+    amount: BigInt!
+    term: BigInt!
+    apy: BigInt!
+    debt: BigInt!
+    start: Int
+    lender: Bytes
+}
