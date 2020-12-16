@@ -2,6 +2,7 @@
 pragma solidity 0.6.10;
 
 import {TimeLockedToken} from "../TimeLockedToken.sol";
+import "hardhat/console.sol";
 
 /**
  * @title VoteToken
@@ -74,6 +75,7 @@ abstract contract VoteToken is TimeLockedToken {
     function _delegate(address delegator, address delegatee) internal {
         address currentDelegate = delegates[delegator];
         uint96 delegatorBalance = uint96(unlockedBalance(delegator));
+        console.log("delegatorBalance: %s", delegatorBalance);
         delegates[delegator] = delegatee;
 
         emit DelegateChanged(delegator, currentDelegate, delegatee);

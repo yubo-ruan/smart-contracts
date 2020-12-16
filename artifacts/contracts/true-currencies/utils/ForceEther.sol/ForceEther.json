@@ -1,0 +1,29 @@
+{
+  "_format": "hh-sol-artifact-1",
+  "contractName": "ForceEther",
+  "sourceName": "contracts/true-currencies/utils/ForceEther.sol",
+  "abi": [
+    {
+      "inputs": [],
+      "stateMutability": "payable",
+      "type": "constructor"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_recipient",
+          "type": "address"
+        }
+      ],
+      "name": "destroyAndSend",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x608060405260bd806100126000396000f3fe6080604052348015600f57600080fd5b506004361060285760003560e01c8063f5074f4114602d575b600080fd5b606c60048036036020811015604157600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050606e565b005b8073ffffffffffffffffffffffffffffffffffffffff16fffea2646970667358221220560b7c8b15684ff37247f72a5aa3909435c827632dc808a7851d420600c6cfd664736f6c634300060a0033",
+  "deployedBytecode": "0x6080604052348015600f57600080fd5b506004361060285760003560e01c8063f5074f4114602d575b600080fd5b606c60048036036020811015604157600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050606e565b005b8073ffffffffffffffffffffffffffffffffffffffff16fffea2646970667358221220560b7c8b15684ff37247f72a5aa3909435c827632dc808a7851d420600c6cfd664736f6c634300060a0033",
+  "linkReferences": {},
+  "deployedLinkReferences": {}
+}

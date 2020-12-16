@@ -10,7 +10,7 @@ contract('VoteToken', function (accounts) {
     const ZERO_ADDRESS = '0x0000000000000000000000000000000000000000'
     describe('Metadata', async function () {
         beforeEach(async function () {
-          this.trusttoken = await TrustToken.new()
+          this.trusttoken = await TrustToken.new({from:owner})
         })
     
         it('Should the name be TrustToken', async function () {

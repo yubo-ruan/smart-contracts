@@ -22,7 +22,9 @@
     "test:js": "./test.sh",
     "test:ts": "mocha",
     "test": "yarn test:ts && yarn test:js",
-    "checks": "yarn lint && yarn typecheck && yarn test"
+    "checks": "yarn lint && yarn typecheck && yarn test",
+    "test:gov": "truffle test ./test/VoteToken.test.js",
+    "chain": "ganache-cli -l 0x8954400 --allowUnlimitedContractSize -k istanbul >/dev/null"
   },
   "husky": {
     "hooks": {}
@@ -57,10 +59,13 @@
     "typescript": "^3.8.3"
   },
   "dependencies": {
+    "@nomiclabs/hardhat-ethers": "^2.0.0",
+    "@nomiclabs/hardhat-waffle": "^2.0.1",
     "@openzeppelin/contracts": "^3.1.0",
     "ethers": "5.0.12",
     "ganache-cli": "6.8.1",
     "ganache-time-traveler": "^1.0.14",
+    "hardhat": "^2.0.5",
     "husky": "^4.2.5",
     "openzeppelin-solidity": "^2.4.0",
     "truffle": "5.1.11",

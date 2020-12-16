@@ -1,0 +1,2899 @@
+{
+  "_format": "hh-sol-cache-2",
+  "files": {
+    "/Users/yubor/Downloads/truefi/smart-contracts/contracts/proxy/OwnedUpgradeabilityProxy.sol": {
+      "lastModificationDate": 1607979178336,
+      "contentHash": "93171118e30bc3e79816e1f6ac1f6057",
+      "sourceName": "contracts/proxy/OwnedUpgradeabilityProxy.sol",
+      "solcConfig": {
+        "version": "0.6.10",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "0.6.10"
+      ],
+      "artifacts": [
+        "OwnedUpgradeabilityProxy"
+      ]
+    },
+    "/Users/yubor/Downloads/truefi/smart-contracts/contracts/true-currencies/TokenController.sol": {
+      "lastModificationDate": 1607979178343,
+      "contentHash": "f5d6436d5f21e7a1e15a33acc01c4125",
+      "sourceName": "contracts/true-currencies/TokenController.sol",
+      "solcConfig": {
+        "version": "0.6.10",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/math/SafeMath.sol",
+        "@openzeppelin/contracts/token/ERC20/IERC20.sol",
+        "../registry/Registry.sol",
+        "../proxy/OwnedUpgradeabilityProxy.sol",
+        "./TrueCurrencyWithGasRefund.sol"
+      ],
+      "versionPragmas": [
+        "0.6.10"
+      ],
+      "artifacts": [
+        "IHasOwner",
+        "IHook",
+        "TokenController"
+      ]
+    },
+    "/Users/yubor/Downloads/truefi/smart-contracts/node_modules/@openzeppelin/contracts/math/SafeMath.sol": {
+      "lastModificationDate": 1607982224599,
+      "contentHash": "168f50d923a8f64094d8e761ca2e5fe6",
+      "sourceName": "@openzeppelin/contracts/math/SafeMath.sol",
+      "solcConfig": {
+        "version": "0.6.10",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.6.0"
+      ],
+      "artifacts": [
+        "SafeMath"
+      ]
+    },
+    "/Users/yubor/Downloads/truefi/smart-contracts/node_modules/@openzeppelin/contracts/token/ERC20/IERC20.sol": {
+      "lastModificationDate": 1607982227222,
+      "contentHash": "95e76adf687e1a31a4b8ece4e9bb757a",
+      "sourceName": "@openzeppelin/contracts/token/ERC20/IERC20.sol",
+      "solcConfig": {
+        "version": "0.6.10",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.6.0"
+      ],
+      "artifacts": [
+        "IERC20"
+      ]
+    },
+    "/Users/yubor/Downloads/truefi/smart-contracts/contracts/registry/Registry.sol": {
+      "lastModificationDate": 1607979178336,
+      "contentHash": "82891ba1ee4af6af0baa38184b124f23",
+      "sourceName": "contracts/registry/Registry.sol",
+      "solcConfig": {
+        "version": "0.6.10",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/token/ERC20/IERC20.sol"
+      ],
+      "versionPragmas": [
+        "0.6.10"
+      ],
+      "artifacts": [
+        "Registry",
+        "RegistryClone"
+      ]
+    },
+    "/Users/yubor/Downloads/truefi/smart-contracts/contracts/true-currencies/TrueCurrencyWithGasRefund.sol": {
+      "lastModificationDate": 1607979178345,
+      "contentHash": "bbba6e06c60aaaaa352a06942a446bdd",
+      "sourceName": "contracts/true-currencies/TrueCurrencyWithGasRefund.sol",
+      "solcConfig": {
+        "version": "0.6.10",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./GasRefund.sol",
+        "./TrueCurrency.sol"
+      ],
+      "versionPragmas": [
+        "0.6.10"
+      ],
+      "artifacts": [
+        "TrueCurrencyWithGasRefund"
+      ]
+    },
+    "/Users/yubor/Downloads/truefi/smart-contracts/contracts/true-currencies/GasRefund.sol": {
+      "lastModificationDate": 1607979178341,
+      "contentHash": "84871b03639f1ce362e312d58f5aba96",
+      "sourceName": "contracts/true-currencies/GasRefund.sol",
+      "solcConfig": {
+        "version": "0.6.10",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "0.6.10"
+      ],
+      "artifacts": [
+        "GasRefund"
+      ]
+    },
+    "/Users/yubor/Downloads/truefi/smart-contracts/contracts/true-currencies/TrueCurrency.sol": {
+      "lastModificationDate": 1607979178344,
+      "contentHash": "9978be89f55013f71be337a5d51a45be",
+      "sourceName": "contracts/true-currencies/TrueCurrency.sol",
+      "solcConfig": {
+        "version": "0.6.10",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./BurnableTokenWithBounds.sol"
+      ],
+      "versionPragmas": [
+        "0.6.10"
+      ],
+      "artifacts": [
+        "TrueCurrency"
+      ]
+    },
+    "/Users/yubor/Downloads/truefi/smart-contracts/contracts/true-currencies/BurnableTokenWithBounds.sol": {
+      "lastModificationDate": 1607979178338,
+      "contentHash": "4bb499be5c5f82d0f98c1e5aff23fe2a",
+      "sourceName": "contracts/true-currencies/BurnableTokenWithBounds.sol",
+      "solcConfig": {
+        "version": "0.6.10",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./ReclaimerToken.sol"
+      ],
+      "versionPragmas": [
+        "0.6.10"
+      ],
+      "artifacts": [
+        "BurnableTokenWithBounds"
+      ]
+    },
+    "/Users/yubor/Downloads/truefi/smart-contracts/contracts/true-currencies/ReclaimerToken.sol": {
+      "lastModificationDate": 1607979178342,
+      "contentHash": "c61934ead23325b1931b371a13f24680",
+      "sourceName": "contracts/true-currencies/ReclaimerToken.sol",
+      "solcConfig": {
+        "version": "0.6.10",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./ERC20.sol"
+      ],
+      "versionPragmas": [
+        "0.6.10"
+      ],
+      "artifacts": [
+        "ReclaimerToken"
+      ]
+    },
+    "/Users/yubor/Downloads/truefi/smart-contracts/contracts/true-currencies/ERC20.sol": {
+      "lastModificationDate": 1607979178341,
+      "contentHash": "a1e82397621ae52202a5a1037f82a626",
+      "sourceName": "contracts/true-currencies/ERC20.sol",
+      "solcConfig": {
+        "version": "0.6.10",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./ClaimableOwnable.sol",
+        "@openzeppelin/contracts/token/ERC20/IERC20.sol",
+        "@openzeppelin/contracts/GSN/Context.sol",
+        "@openzeppelin/contracts/math/SafeMath.sol",
+        "@openzeppelin/contracts/utils/Address.sol"
+      ],
+      "versionPragmas": [
+        "0.6.10"
+      ],
+      "artifacts": [
+        "ERC20"
+      ]
+    },
+    "/Users/yubor/Downloads/truefi/smart-contracts/contracts/true-currencies/ClaimableOwnable.sol": {
+      "lastModificationDate": 1607979178340,
+      "contentHash": "fa0084e8da1e0f2a8cbcdb4194707f74",
+      "sourceName": "contracts/true-currencies/ClaimableOwnable.sol",
+      "solcConfig": {
+        "version": "0.6.10",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./ProxyStorage.sol"
+      ],
+      "versionPragmas": [
+        "0.6.10"
+      ],
+      "artifacts": [
+        "ClaimableOwnable"
+      ]
+    },
+    "/Users/yubor/Downloads/truefi/smart-contracts/node_modules/@openzeppelin/contracts/GSN/Context.sol": {
+      "lastModificationDate": 1607982224600,
+      "contentHash": "af1b36323856d0d1550abc7f878a8208",
+      "sourceName": "@openzeppelin/contracts/GSN/Context.sol",
+      "solcConfig": {
+        "version": "0.6.10",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.6.0"
+      ],
+      "artifacts": [
+        "Context"
+      ]
+    },
+    "/Users/yubor/Downloads/truefi/smart-contracts/node_modules/@openzeppelin/contracts/utils/Address.sol": {
+      "lastModificationDate": 1607982224599,
+      "contentHash": "123f93732b38fa4a14febeab42234999",
+      "sourceName": "@openzeppelin/contracts/utils/Address.sol",
+      "solcConfig": {
+        "version": "0.6.10",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.6.2"
+      ],
+      "artifacts": [
+        "Address"
+      ]
+    },
+    "/Users/yubor/Downloads/truefi/smart-contracts/contracts/true-currencies/ProxyStorage.sol": {
+      "lastModificationDate": 1607979178342,
+      "contentHash": "e47cc69161373afa15bedb33125861c3",
+      "sourceName": "contracts/true-currencies/ProxyStorage.sol",
+      "solcConfig": {
+        "version": "0.6.10",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "0.6.10"
+      ],
+      "artifacts": [
+        "ProxyStorage"
+      ]
+    },
+    "/Users/yubor/Downloads/truefi/smart-contracts/contracts/true-currencies/tokens/TrueHKD.sol": {
+      "lastModificationDate": 1607979178349,
+      "contentHash": "469a21e10a7c1849c514742787704013",
+      "sourceName": "contracts/true-currencies/tokens/TrueHKD.sol",
+      "solcConfig": {
+        "version": "0.6.10",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../TrueCurrencyWithGasRefund.sol"
+      ],
+      "versionPragmas": [
+        "0.6.10"
+      ],
+      "artifacts": [
+        "TrueHKD"
+      ]
+    },
+    "/Users/yubor/Downloads/truefi/smart-contracts/contracts/true-currencies/tokens/TrueGBP.sol": {
+      "lastModificationDate": 1607979178349,
+      "contentHash": "0cc3e8244d5a3ce8de56e151e0f18630",
+      "sourceName": "contracts/true-currencies/tokens/TrueGBP.sol",
+      "solcConfig": {
+        "version": "0.6.10",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../TrueCurrencyWithGasRefund.sol"
+      ],
+      "versionPragmas": [
+        "0.6.10"
+      ],
+      "artifacts": [
+        "TrueGBP"
+      ]
+    },
+    "/Users/yubor/Downloads/truefi/smart-contracts/contracts/true-currencies/tokens/TrueCAD.sol": {
+      "lastModificationDate": 1607979178349,
+      "contentHash": "bf91aa3dfe6b272f2aa2667a71331519",
+      "sourceName": "contracts/true-currencies/tokens/TrueCAD.sol",
+      "solcConfig": {
+        "version": "0.6.10",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../TrueCurrencyWithGasRefund.sol"
+      ],
+      "versionPragmas": [
+        "0.6.10"
+      ],
+      "artifacts": [
+        "TrueCAD"
+      ]
+    },
+    "/Users/yubor/Downloads/truefi/smart-contracts/contracts/true-currencies/tokens/TrueAUD.sol": {
+      "lastModificationDate": 1607979178349,
+      "contentHash": "d3d906d4428ab246bd7f29e0edbdb860",
+      "sourceName": "contracts/true-currencies/tokens/TrueAUD.sol",
+      "solcConfig": {
+        "version": "0.6.10",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../TrueCurrencyWithGasRefund.sol"
+      ],
+      "versionPragmas": [
+        "0.6.10"
+      ],
+      "artifacts": [
+        "TrueAUD"
+      ]
+    },
+    "/Users/yubor/Downloads/truefi/smart-contracts/contracts/true-currencies/mocks/MockTrueCurrencyWithDelegate.sol": {
+      "lastModificationDate": 1607979178347,
+      "contentHash": "54640f3da5cff3369e0c7c33211b9f8b",
+      "sourceName": "contracts/true-currencies/mocks/MockTrueCurrencyWithDelegate.sol",
+      "solcConfig": {
+        "version": "0.6.10",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../TrueCurrency.sol"
+      ],
+      "versionPragmas": [
+        "0.6.10"
+      ],
+      "artifacts": [
+        "MockTrueCurrencyWithDelegate"
+      ]
+    },
+    "/Users/yubor/Downloads/truefi/smart-contracts/contracts/true-currencies/mocks/MockTrueCurrencyWithLegacyAutosweep.sol": {
+      "lastModificationDate": 1607979178348,
+      "contentHash": "b2d142f18adffdfc785ab1be5b8b70c9",
+      "sourceName": "contracts/true-currencies/mocks/MockTrueCurrencyWithLegacyAutosweep.sol",
+      "solcConfig": {
+        "version": "0.6.10",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./MockTrueCurrencyWithDelegate.sol"
+      ],
+      "versionPragmas": [
+        "0.6.10"
+      ],
+      "artifacts": [
+        "MockTrueCurrencyWithLegacyAutosweep"
+      ]
+    },
+    "/Users/yubor/Downloads/truefi/smart-contracts/contracts/true-currencies/mocks/MockTrueCurrencyWithAutosweep.sol": {
+      "lastModificationDate": 1607979178347,
+      "contentHash": "3c3711efd1551c7036285729c8afda3b",
+      "sourceName": "contracts/true-currencies/mocks/MockTrueCurrencyWithAutosweep.sol",
+      "solcConfig": {
+        "version": "0.6.10",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./MockTrueCurrencyWithLegacyAutosweep.sol"
+      ],
+      "versionPragmas": [
+        "0.6.10"
+      ],
+      "artifacts": [
+        "MockTrueCurrencyWithAutosweep"
+      ]
+    },
+    "/Users/yubor/Downloads/truefi/smart-contracts/contracts/true-currencies/mocks/MockTrueCurrency.sol": {
+      "lastModificationDate": 1607979178347,
+      "contentHash": "bbb3930294aea7ad95167fcf81dfdc87",
+      "sourceName": "contracts/true-currencies/mocks/MockTrueCurrency.sol",
+      "solcConfig": {
+        "version": "0.6.10",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../TrueCurrency.sol"
+      ],
+      "versionPragmas": [
+        "0.6.10"
+      ],
+      "artifacts": [
+        "MockTrueCurrency"
+      ]
+    },
+    "/Users/yubor/Downloads/truefi/smart-contracts/contracts/true-currencies/mocks/MockDelegateERC20.sol": {
+      "lastModificationDate": 1607979178346,
+      "contentHash": "7515764f7518b85748af5c8f2f7aa4f9",
+      "sourceName": "contracts/true-currencies/mocks/MockDelegateERC20.sol",
+      "solcConfig": {
+        "version": "0.6.10",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../ERC20.sol"
+      ],
+      "versionPragmas": [
+        "0.6.10"
+      ],
+      "artifacts": [
+        "IDelegateERC20",
+        "MockDelegateERC20"
+      ]
+    },
+    "/Users/yubor/Downloads/truefi/smart-contracts/contracts/truefi/upgradeability/UpgradeableERC20.sol": {
+      "lastModificationDate": 1607979178360,
+      "contentHash": "b100241cdfff2b19f2da3a524e5c1bf7",
+      "sourceName": "contracts/truefi/upgradeability/UpgradeableERC20.sol",
+      "solcConfig": {
+        "version": "0.6.10",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/token/ERC20/IERC20.sol",
+        "@openzeppelin/contracts/GSN/Context.sol",
+        "@openzeppelin/contracts/math/SafeMath.sol",
+        "@openzeppelin/contracts/utils/Address.sol",
+        "./Initializable.sol"
+      ],
+      "versionPragmas": [
+        "0.6.10"
+      ],
+      "artifacts": [
+        "ERC20"
+      ]
+    },
+    "/Users/yubor/Downloads/truefi/smart-contracts/contracts/truefi/upgradeability/Initializable.sol": {
+      "lastModificationDate": 1607979178360,
+      "contentHash": "1562764f983457f884693eda03709cfd",
+      "sourceName": "contracts/truefi/upgradeability/Initializable.sol",
+      "solcConfig": {
+        "version": "0.6.10",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "0.6.10"
+      ],
+      "artifacts": [
+        "Initializable"
+      ]
+    },
+    "/Users/yubor/Downloads/truefi/smart-contracts/contracts/truefi/TrueFarm.sol": {
+      "lastModificationDate": 1607979178352,
+      "contentHash": "dceb82bcb37b8b88606c289f2fb16e07",
+      "sourceName": "contracts/truefi/TrueFarm.sol",
+      "solcConfig": {
+        "version": "0.6.10",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/math/SafeMath.sol",
+        "@openzeppelin/contracts/token/ERC20/IERC20.sol",
+        "./interface/ITrueDistributor.sol",
+        "./interface/ITrueFarm.sol",
+        "./upgradeability/Initializable.sol"
+      ],
+      "versionPragmas": [
+        "0.6.10"
+      ],
+      "artifacts": [
+        "TrueFarm"
+      ]
+    },
+    "/Users/yubor/Downloads/truefi/smart-contracts/contracts/truefi/interface/ITrueDistributor.sol": {
+      "lastModificationDate": 1607979178356,
+      "contentHash": "79e0d719b6c6292a4f54fe995a155927",
+      "sourceName": "contracts/truefi/interface/ITrueDistributor.sol",
+      "solcConfig": {
+        "version": "0.6.10",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/token/ERC20/IERC20.sol"
+      ],
+      "versionPragmas": [
+        "0.6.10"
+      ],
+      "artifacts": [
+        "ITrueDistributor"
+      ]
+    },
+    "/Users/yubor/Downloads/truefi/smart-contracts/contracts/truefi/interface/ITrueFarm.sol": {
+      "lastModificationDate": 1607979178356,
+      "contentHash": "8557f722696bfadb58ff924a3603144c",
+      "sourceName": "contracts/truefi/interface/ITrueFarm.sol",
+      "solcConfig": {
+        "version": "0.6.10",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/token/ERC20/IERC20.sol",
+        "./ITrueDistributor.sol"
+      ],
+      "versionPragmas": [
+        "0.6.10"
+      ],
+      "artifacts": [
+        "ITrueFarm"
+      ]
+    },
+    "/Users/yubor/Downloads/truefi/smart-contracts/contracts/truefi/distributors/LinearTrueDistributor.sol": {
+      "lastModificationDate": 1607979178354,
+      "contentHash": "8b25747d9a235da809494afe3e616b8c",
+      "sourceName": "contracts/truefi/distributors/LinearTrueDistributor.sol",
+      "solcConfig": {
+        "version": "0.6.10",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/math/SafeMath.sol",
+        "../interface/ITrueDistributor.sol",
+        "../upgradeability/UpgradeableOwnable.sol"
+      ],
+      "versionPragmas": [
+        "0.6.10"
+      ],
+      "artifacts": [
+        "LinearTrueDistributor"
+      ]
+    },
+    "/Users/yubor/Downloads/truefi/smart-contracts/contracts/truefi/upgradeability/UpgradeableOwnable.sol": {
+      "lastModificationDate": 1607979178361,
+      "contentHash": "70a48d1a8247f37853b43df0bf0adfdd",
+      "sourceName": "contracts/truefi/upgradeability/UpgradeableOwnable.sol",
+      "solcConfig": {
+        "version": "0.6.10",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/GSN/Context.sol",
+        "./Initializable.sol"
+      ],
+      "versionPragmas": [
+        "0.6.10"
+      ],
+      "artifacts": [
+        "Ownable"
+      ]
+    },
+    "/Users/yubor/Downloads/truefi/smart-contracts/contracts/truefi/TrueRatingAgency.sol": {
+      "lastModificationDate": 1607979178353,
+      "contentHash": "4969b913591f1b779718d6bd9d8ab2fc",
+      "sourceName": "contracts/truefi/TrueRatingAgency.sol",
+      "solcConfig": {
+        "version": "0.6.10",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/math/SafeMath.sol",
+        "@openzeppelin/contracts/token/ERC20/IERC20.sol",
+        "../trusttoken/IBurnableERC20.sol",
+        "./interface/IArbitraryDistributor.sol",
+        "./interface/ILoanToken.sol",
+        "./interface/ITrueFiPool.sol",
+        "./interface/ITrueRatingAgency.sol",
+        "./interface/ILoanFactory.sol",
+        "./upgradeability/UpgradeableOwnable.sol"
+      ],
+      "versionPragmas": [
+        "0.6.10"
+      ],
+      "artifacts": [
+        "TrueRatingAgency"
+      ]
+    },
+    "/Users/yubor/Downloads/truefi/smart-contracts/contracts/trusttoken/IBurnableERC20.sol": {
+      "lastModificationDate": 1607982123312,
+      "contentHash": "7bc75bbeb29061782e2776dc06dde355",
+      "sourceName": "contracts/trusttoken/IBurnableERC20.sol",
+      "solcConfig": {
+        "version": "0.6.10",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/token/ERC20/IERC20.sol"
+      ],
+      "versionPragmas": [
+        "0.6.10"
+      ],
+      "artifacts": [
+        "IBurnableERC20"
+      ]
+    },
+    "/Users/yubor/Downloads/truefi/smart-contracts/contracts/truefi/interface/IArbitraryDistributor.sol": {
+      "lastModificationDate": 1607979178355,
+      "contentHash": "db4aac64efd24ac76c2d4bc4459cf42c",
+      "sourceName": "contracts/truefi/interface/IArbitraryDistributor.sol",
+      "solcConfig": {
+        "version": "0.6.10",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "0.6.10"
+      ],
+      "artifacts": [
+        "IArbitraryDistributor"
+      ]
+    },
+    "/Users/yubor/Downloads/truefi/smart-contracts/contracts/truefi/interface/ILoanToken.sol": {
+      "lastModificationDate": 1607979178356,
+      "contentHash": "ce7e803dcc1f27d64436896e9d1278d1",
+      "sourceName": "contracts/truefi/interface/ILoanToken.sol",
+      "solcConfig": {
+        "version": "0.6.10",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/token/ERC20/IERC20.sol"
+      ],
+      "versionPragmas": [
+        "0.6.10"
+      ],
+      "artifacts": [
+        "ILoanToken"
+      ]
+    },
+    "/Users/yubor/Downloads/truefi/smart-contracts/contracts/truefi/interface/ITrueFiPool.sol": {
+      "lastModificationDate": 1607979178357,
+      "contentHash": "44eb8f0c2301c455bb7c0c8da9a1e6ee",
+      "sourceName": "contracts/truefi/interface/ITrueFiPool.sol",
+      "solcConfig": {
+        "version": "0.6.10",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/token/ERC20/IERC20.sol"
+      ],
+      "versionPragmas": [
+        "0.6.10"
+      ],
+      "artifacts": [
+        "ITrueFiPool"
+      ]
+    },
+    "/Users/yubor/Downloads/truefi/smart-contracts/contracts/truefi/interface/ITrueRatingAgency.sol": {
+      "lastModificationDate": 1607979178357,
+      "contentHash": "c54c42e3d1abad7a46cfdf49f34502a9",
+      "sourceName": "contracts/truefi/interface/ITrueRatingAgency.sol",
+      "solcConfig": {
+        "version": "0.6.10",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "0.6.10"
+      ],
+      "artifacts": [
+        "ITrueRatingAgency"
+      ]
+    },
+    "/Users/yubor/Downloads/truefi/smart-contracts/contracts/truefi/interface/ILoanFactory.sol": {
+      "lastModificationDate": 1607979178356,
+      "contentHash": "2b16e5a738a2b12b92edda56c6b36c92",
+      "sourceName": "contracts/truefi/interface/ILoanFactory.sol",
+      "solcConfig": {
+        "version": "0.6.10",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "0.6.10"
+      ],
+      "artifacts": [
+        "ILoanFactory"
+      ]
+    },
+    "/Users/yubor/Downloads/truefi/smart-contracts/contracts/truefi/LoanFactory.sol": {
+      "lastModificationDate": 1607979178351,
+      "contentHash": "551504975d38301c4ed546ba5a54b80a",
+      "sourceName": "contracts/truefi/LoanFactory.sol",
+      "solcConfig": {
+        "version": "0.6.10",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./upgradeability/Initializable.sol",
+        "./LoanToken.sol",
+        "./interface/ILoanFactory.sol"
+      ],
+      "versionPragmas": [
+        "0.6.10"
+      ],
+      "artifacts": [
+        "LoanFactory"
+      ]
+    },
+    "/Users/yubor/Downloads/truefi/smart-contracts/contracts/truefi/LoanToken.sol": {
+      "lastModificationDate": 1607979178351,
+      "contentHash": "ab3b3ec9f0cedeeb02a9df8f0ea5d59b",
+      "sourceName": "contracts/truefi/LoanToken.sol",
+      "solcConfig": {
+        "version": "0.6.10",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/token/ERC20/ERC20.sol",
+        "@openzeppelin/contracts/token/ERC20/IERC20.sol",
+        "@openzeppelin/contracts/math/SafeMath.sol",
+        "./interface/ILoanToken.sol"
+      ],
+      "versionPragmas": [
+        "0.6.10"
+      ],
+      "artifacts": [
+        "LoanToken"
+      ]
+    },
+    "/Users/yubor/Downloads/truefi/smart-contracts/node_modules/@openzeppelin/contracts/token/ERC20/ERC20.sol": {
+      "lastModificationDate": 1607982227221,
+      "contentHash": "84e7212989184a404420e487dc9bf91d",
+      "sourceName": "@openzeppelin/contracts/token/ERC20/ERC20.sol",
+      "solcConfig": {
+        "version": "0.6.10",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../../GSN/Context.sol",
+        "./IERC20.sol",
+        "../../math/SafeMath.sol",
+        "../../utils/Address.sol"
+      ],
+      "versionPragmas": [
+        "^0.6.0"
+      ],
+      "artifacts": [
+        "ERC20"
+      ]
+    },
+    "/Users/yubor/Downloads/truefi/smart-contracts/contracts/truefi/TrueLender.sol": {
+      "lastModificationDate": 1607979178352,
+      "contentHash": "1f6d386d437154f8035ce1d09c1a3b29",
+      "sourceName": "contracts/truefi/TrueLender.sol",
+      "solcConfig": {
+        "version": "0.6.10",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/token/ERC20/IERC20.sol",
+        "@openzeppelin/contracts/math/SafeMath.sol",
+        "./interface/ILoanToken.sol",
+        "./interface/ITrueFiPool.sol",
+        "./interface/ITrueLender.sol",
+        "./interface/ITrueRatingAgency.sol",
+        "./upgradeability/UpgradeableOwnable.sol"
+      ],
+      "versionPragmas": [
+        "0.6.10"
+      ],
+      "artifacts": [
+        "TrueLender"
+      ]
+    },
+    "/Users/yubor/Downloads/truefi/smart-contracts/contracts/truefi/interface/ITrueLender.sol": {
+      "lastModificationDate": 1607979178357,
+      "contentHash": "139e73a5d95fdc19257fc8577fb78d22",
+      "sourceName": "contracts/truefi/interface/ITrueLender.sol",
+      "solcConfig": {
+        "version": "0.6.10",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "0.6.10"
+      ],
+      "artifacts": [
+        "ITrueLender"
+      ]
+    },
+    "/Users/yubor/Downloads/truefi/smart-contracts/contracts/truefi/TrueFiPool.sol": {
+      "lastModificationDate": 1607979178352,
+      "contentHash": "49da10d2978ca1f3e996f4ab08d6e854",
+      "sourceName": "contracts/truefi/TrueFiPool.sol",
+      "solcConfig": {
+        "version": "0.6.10",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/token/ERC20/IERC20.sol",
+        "@openzeppelin/contracts/utils/ReentrancyGuard.sol",
+        "@openzeppelin/contracts/math/SafeMath.sol",
+        "./interface/ITrueFiPool.sol",
+        "./interface/IUniswapRouter.sol",
+        "./interface/ICurve.sol",
+        "./interface/ITrueLender.sol",
+        "./upgradeability/UpgradeableERC20.sol",
+        "./upgradeability/UpgradeableOwnable.sol"
+      ],
+      "versionPragmas": [
+        "0.6.10"
+      ],
+      "artifacts": [
+        "TrueFiPool"
+      ]
+    },
+    "/Users/yubor/Downloads/truefi/smart-contracts/node_modules/@openzeppelin/contracts/utils/ReentrancyGuard.sol": {
+      "lastModificationDate": 1607982224600,
+      "contentHash": "d7295fcfe1e67e8b5e0099bdba192e19",
+      "sourceName": "@openzeppelin/contracts/utils/ReentrancyGuard.sol",
+      "solcConfig": {
+        "version": "0.6.10",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.6.0"
+      ],
+      "artifacts": [
+        "ReentrancyGuard"
+      ]
+    },
+    "/Users/yubor/Downloads/truefi/smart-contracts/contracts/truefi/interface/IUniswapRouter.sol": {
+      "lastModificationDate": 1607979178358,
+      "contentHash": "3b481bf1b31aaa86f94ed53afe8f482a",
+      "sourceName": "contracts/truefi/interface/IUniswapRouter.sol",
+      "solcConfig": {
+        "version": "0.6.10",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "0.6.10"
+      ],
+      "artifacts": [
+        "IUniswapRouter"
+      ]
+    },
+    "/Users/yubor/Downloads/truefi/smart-contracts/contracts/truefi/interface/ICurve.sol": {
+      "lastModificationDate": 1607979178355,
+      "contentHash": "47b996290f83ad6c6dde729ef83eab81",
+      "sourceName": "contracts/truefi/interface/ICurve.sol",
+      "solcConfig": {
+        "version": "0.6.10",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/token/ERC20/IERC20.sol",
+        "./IYToken.sol"
+      ],
+      "versionPragmas": [
+        "0.6.10"
+      ],
+      "artifacts": [
+        "ICurve",
+        "ICurveGauge",
+        "ICurveMinter",
+        "ICurvePool"
+      ]
+    },
+    "/Users/yubor/Downloads/truefi/smart-contracts/contracts/truefi/interface/IYToken.sol": {
+      "lastModificationDate": 1607979178358,
+      "contentHash": "eb0beb8b071d9bb766a55f32e90341c2",
+      "sourceName": "contracts/truefi/interface/IYToken.sol",
+      "solcConfig": {
+        "version": "0.6.10",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/token/ERC20/IERC20.sol"
+      ],
+      "versionPragmas": [
+        "0.6.10"
+      ],
+      "artifacts": [
+        "IYToken"
+      ]
+    },
+    "/Users/yubor/Downloads/truefi/smart-contracts/contracts/truefi/mock/MockCurvePool.sol": {
+      "lastModificationDate": 1607979178359,
+      "contentHash": "ce4b1e85a19b338c6baa1c77ddc5507f",
+      "sourceName": "contracts/truefi/mock/MockCurvePool.sol",
+      "solcConfig": {
+        "version": "0.6.10",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/token/ERC20/IERC20.sol",
+        "../interface/ICurve.sol",
+        "../interface/IYToken.sol",
+        "../../trusttoken/mocks/MockERC20Token.sol",
+        "../upgradeability/Initializable.sol",
+        "../../trusttoken/mocks/MockERC20Token.sol"
+      ],
+      "versionPragmas": [
+        "0.6.10"
+      ],
+      "artifacts": [
+        "MockCurve",
+        "MockCurvePool",
+        "MockYToken"
+      ]
+    },
+    "/Users/yubor/Downloads/truefi/smart-contracts/contracts/trusttoken/mocks/MockERC20Token.sol": {
+      "lastModificationDate": 1607979178364,
+      "contentHash": "899d4f8d33fa18f26570efa15d9bcdca",
+      "sourceName": "contracts/trusttoken/mocks/MockERC20Token.sol",
+      "solcConfig": {
+        "version": "0.6.10",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../../registry/Registry.sol",
+        "../ERC20.sol"
+      ],
+      "versionPragmas": [
+        "0.6.10"
+      ],
+      "artifacts": [
+        "MockERC20Token"
+      ]
+    },
+    "/Users/yubor/Downloads/truefi/smart-contracts/contracts/trusttoken/ERC20.sol": {
+      "lastModificationDate": 1607982128491,
+      "contentHash": "532cbfdff0b7a93716d130dc7ff1e8cb",
+      "sourceName": "contracts/trusttoken/ERC20.sol",
+      "solcConfig": {
+        "version": "0.6.10",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/GSN/Context.sol",
+        "@openzeppelin/contracts/math/SafeMath.sol",
+        "@openzeppelin/contracts/utils/Address.sol",
+        "./ProxyStorage.sol"
+      ],
+      "versionPragmas": [
+        "0.6.10"
+      ],
+      "artifacts": [
+        "ERC20"
+      ]
+    },
+    "/Users/yubor/Downloads/truefi/smart-contracts/contracts/trusttoken/ProxyStorage.sol": {
+      "lastModificationDate": 1607994027519,
+      "contentHash": "5b7adf19cd8cba7d4f26c36fb1eb5a12",
+      "sourceName": "contracts/trusttoken/ProxyStorage.sol",
+      "solcConfig": {
+        "version": "0.6.10",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "0.6.10"
+      ],
+      "artifacts": [
+        "ProxyStorage"
+      ]
+    },
+    "/Users/yubor/Downloads/truefi/smart-contracts/contracts/trusttoken/TimeLockedToken.sol": {
+      "lastModificationDate": 1607990634173,
+      "contentHash": "1d4c8e66d48cbd9a7241c070681a74ae",
+      "sourceName": "contracts/trusttoken/TimeLockedToken.sol",
+      "solcConfig": {
+        "version": "0.6.10",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/math/SafeMath.sol",
+        "./ERC20.sol",
+        "./ClaimableContract.sol"
+      ],
+      "versionPragmas": [
+        "0.6.10"
+      ],
+      "artifacts": [
+        "TimeLockedToken"
+      ]
+    },
+    "/Users/yubor/Downloads/truefi/smart-contracts/contracts/trusttoken/ClaimableContract.sol": {
+      "lastModificationDate": 1607982130522,
+      "contentHash": "b3a4a00288b52b9246caa0fc675716e5",
+      "sourceName": "contracts/trusttoken/ClaimableContract.sol",
+      "solcConfig": {
+        "version": "0.6.10",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./ProxyStorage.sol"
+      ],
+      "versionPragmas": [
+        "0.6.10"
+      ],
+      "artifacts": [
+        "ClaimableContract"
+      ]
+    },
+    "/Users/yubor/Downloads/truefi/smart-contracts/contracts/trusttoken/TimeLockRegistry.sol": {
+      "lastModificationDate": 1607979178363,
+      "contentHash": "f070b8fe864575c2750e73684a4b7c7a",
+      "sourceName": "contracts/trusttoken/TimeLockRegistry.sol",
+      "solcConfig": {
+        "version": "0.6.10",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./TimeLockedToken.sol",
+        "./ClaimableContract.sol"
+      ],
+      "versionPragmas": [
+        "0.6.10"
+      ],
+      "artifacts": [
+        "TimeLockRegistry"
+      ]
+    },
+    "/Users/yubor/Downloads/truefi/smart-contracts/contracts/trusttoken/TrustToken.sol": {
+      "lastModificationDate": 1607991927263,
+      "contentHash": "e7d3804973e7ad89173e636605b5fb37",
+      "sourceName": "contracts/trusttoken/TrustToken.sol",
+      "solcConfig": {
+        "version": "0.6.10",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/math/SafeMath.sol",
+        "./governance/VoteToken.sol"
+      ],
+      "versionPragmas": [
+        "0.6.10"
+      ],
+      "artifacts": [
+        "TrustToken"
+      ]
+    },
+    "/Users/yubor/Downloads/truefi/smart-contracts/contracts/trusttoken/governance/VoteToken.sol": {
+      "lastModificationDate": 1608078879233,
+      "contentHash": "d04e6b4449f2ceeaf8dcd7f3a9c77a23",
+      "sourceName": "contracts/trusttoken/governance/VoteToken.sol",
+      "solcConfig": {
+        "version": "0.6.10",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../TimeLockedToken.sol",
+        "hardhat/console.sol"
+      ],
+      "versionPragmas": [
+        "0.6.10"
+      ],
+      "artifacts": [
+        "VoteToken"
+      ]
+    },
+    "/Users/yubor/Downloads/truefi/smart-contracts/contracts/trusttoken/governance/Timelock.sol": {
+      "lastModificationDate": 1607995030602,
+      "contentHash": "e549e267c27549e6595c7ed5d760848d",
+      "sourceName": "contracts/trusttoken/governance/Timelock.sol",
+      "solcConfig": {
+        "version": "0.6.10",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/math/SafeMath.sol"
+      ],
+      "versionPragmas": [
+        "^0.6.10"
+      ],
+      "artifacts": [
+        "Timelock"
+      ]
+    },
+    "/Users/yubor/Downloads/truefi/smart-contracts/contracts/truefi/distributors/QuadraticTrueDistributor.sol": {
+      "lastModificationDate": 1607979178354,
+      "contentHash": "7efe1ba89e044db0f448df69a9f50baf",
+      "sourceName": "contracts/truefi/distributors/QuadraticTrueDistributor.sol",
+      "solcConfig": {
+        "version": "0.6.10",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/math/SafeMath.sol",
+        "@openzeppelin/contracts/token/ERC20/IERC20.sol",
+        "../interface/ITrueDistributor.sol",
+        "../upgradeability/UpgradeableOwnable.sol"
+      ],
+      "versionPragmas": [
+        "0.6.10"
+      ],
+      "artifacts": [
+        "QuadraticTrueDistributor"
+      ]
+    },
+    "/Users/yubor/Downloads/truefi/smart-contracts/contracts/truefi/mock/MockDistributor.sol": {
+      "lastModificationDate": 1607979178359,
+      "contentHash": "f4a215ce2653911696f8c06ddfa52b8f",
+      "sourceName": "contracts/truefi/mock/MockDistributor.sol",
+      "solcConfig": {
+        "version": "0.6.10",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../distributors/QuadraticTrueDistributor.sol"
+      ],
+      "versionPragmas": [
+        "0.6.10"
+      ],
+      "artifacts": [
+        "MockDistributor"
+      ]
+    },
+    "/Users/yubor/Downloads/truefi/smart-contracts/contracts/truefi/distributors/SlowTrueDistributor.sol": {
+      "lastModificationDate": 1607979178355,
+      "contentHash": "bb10519a30c4608b35d85c4a9369b8da",
+      "sourceName": "contracts/truefi/distributors/SlowTrueDistributor.sol",
+      "solcConfig": {
+        "version": "0.6.10",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/token/ERC20/ERC20.sol",
+        "./QuadraticTrueDistributor.sol"
+      ],
+      "versionPragmas": [
+        "0.6.10"
+      ],
+      "artifacts": [
+        "SlowTrueDistributor"
+      ]
+    },
+    "/Users/yubor/Downloads/truefi/smart-contracts/contracts/truefi/distributors/ArbitraryDistributor.sol": {
+      "lastModificationDate": 1607979178353,
+      "contentHash": "0920710de4a652d4ccd70b9d56998014",
+      "sourceName": "contracts/truefi/distributors/ArbitraryDistributor.sol",
+      "solcConfig": {
+        "version": "0.6.10",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/math/SafeMath.sol",
+        "@openzeppelin/contracts/token/ERC20/IERC20.sol",
+        "../interface/IArbitraryDistributor.sol",
+        "../upgradeability/UpgradeableOwnable.sol"
+      ],
+      "versionPragmas": [
+        "0.6.10"
+      ],
+      "artifacts": [
+        "ArbitraryDistributor"
+      ]
+    },
+    "/Users/yubor/Downloads/truefi/smart-contracts/contracts/registry/mocks/RegistryMock.sol": {
+      "lastModificationDate": 1607979178337,
+      "contentHash": "6d04e8ae95dc10b11f5418b468f8dc3d",
+      "sourceName": "contracts/registry/mocks/RegistryMock.sol",
+      "solcConfig": {
+        "version": "0.6.10",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../Registry.sol",
+        "./ProvisionalRegistry.sol"
+      ],
+      "versionPragmas": [
+        "0.6.10"
+      ],
+      "artifacts": [
+        "ProvisionalRegistryMock",
+        "RegistryMock"
+      ]
+    },
+    "/Users/yubor/Downloads/truefi/smart-contracts/contracts/registry/mocks/ProvisionalRegistry.sol": {
+      "lastModificationDate": 1607979178337,
+      "contentHash": "c842b2d0c1135e06f6d49dd5f8533de5",
+      "sourceName": "contracts/registry/mocks/ProvisionalRegistry.sol",
+      "solcConfig": {
+        "version": "0.6.10",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../Registry.sol"
+      ],
+      "versionPragmas": [
+        "0.6.10"
+      ],
+      "artifacts": [
+        "ProvisionalRegistry"
+      ]
+    },
+    "/Users/yubor/Downloads/truefi/smart-contracts/contracts/registry/mocks/MockRegistrySubscriber.sol": {
+      "lastModificationDate": 1607979178337,
+      "contentHash": "85fabc4525a3db930fede3ca762480f0",
+      "sourceName": "contracts/registry/mocks/MockRegistrySubscriber.sol",
+      "solcConfig": {
+        "version": "0.6.10",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../Registry.sol"
+      ],
+      "versionPragmas": [
+        "0.6.10"
+      ],
+      "artifacts": [
+        "MockRegistrySubscriber"
+      ]
+    },
+    "/Users/yubor/Downloads/truefi/smart-contracts/contracts/truefi/distributors/FastTrueDistributor.sol": {
+      "lastModificationDate": 1607979178354,
+      "contentHash": "7c10ceafbe2cc8be806001d7b66837fc",
+      "sourceName": "contracts/truefi/distributors/FastTrueDistributor.sol",
+      "solcConfig": {
+        "version": "0.6.10",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/token/ERC20/ERC20.sol",
+        "./QuadraticTrueDistributor.sol"
+      ],
+      "versionPragmas": [
+        "0.6.10"
+      ],
+      "artifacts": [
+        "FastTrueDistributor"
+      ]
+    },
+    "/Users/yubor/Downloads/truefi/smart-contracts/contracts/truefi/mock/MockTrueLender.sol": {
+      "lastModificationDate": 1607979178359,
+      "contentHash": "2e80809cdb4e1625a76a75e06d119885",
+      "sourceName": "contracts/truefi/mock/MockTrueLender.sol",
+      "solcConfig": {
+        "version": "0.6.10",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../TrueLender.sol"
+      ],
+      "versionPragmas": [
+        "0.6.10"
+      ],
+      "artifacts": [
+        "MockTrueLender"
+      ]
+    },
+    "/Users/yubor/Downloads/truefi/smart-contracts/contracts/true-currencies/DelegateERC20.sol": {
+      "lastModificationDate": 1607979178340,
+      "contentHash": "85fd18f43d5e5c8e5c7b2850c8f3b3ad",
+      "sourceName": "contracts/true-currencies/DelegateERC20.sol",
+      "solcConfig": {
+        "version": "0.6.10",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./TrueCurrency.sol"
+      ],
+      "versionPragmas": [
+        "0.6.10"
+      ],
+      "artifacts": [
+        "DelegateERC20"
+      ]
+    },
+    "/Users/yubor/Downloads/truefi/smart-contracts/contracts/true-currencies/TrueCurrencyWithLegacyAutosweep.sol": {
+      "lastModificationDate": 1607979178345,
+      "contentHash": "36c87294afc2bed65304b9c7cca6726c",
+      "sourceName": "contracts/true-currencies/TrueCurrencyWithLegacyAutosweep.sol",
+      "solcConfig": {
+        "version": "0.6.10",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./DelegateERC20.sol"
+      ],
+      "versionPragmas": [
+        "0.6.10"
+      ],
+      "artifacts": [
+        "TrueCurrencyWithLegacyAutosweep"
+      ]
+    },
+    "/Users/yubor/Downloads/truefi/smart-contracts/contracts/true-currencies/tokens/TrueUSD.sol": {
+      "lastModificationDate": 1607979178350,
+      "contentHash": "682ca0abe391332a711d69698774e4c2",
+      "sourceName": "contracts/true-currencies/tokens/TrueUSD.sol",
+      "solcConfig": {
+        "version": "0.6.10",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../TrueCurrencyWithLegacyAutosweep.sol"
+      ],
+      "versionPragmas": [
+        "0.6.10"
+      ],
+      "artifacts": [
+        "TrueUSD"
+      ]
+    },
+    "/Users/yubor/Downloads/truefi/smart-contracts/contracts/true-currencies/mocks/MockTrueCurrencyWithGasRefund.sol": {
+      "lastModificationDate": 1607979178348,
+      "contentHash": "4c284bd4d25bd79a8f3d7f114a91e7ef",
+      "sourceName": "contracts/true-currencies/mocks/MockTrueCurrencyWithGasRefund.sol",
+      "solcConfig": {
+        "version": "0.6.10",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../TrueCurrencyWithGasRefund.sol"
+      ],
+      "versionPragmas": [
+        "0.6.10"
+      ],
+      "artifacts": [
+        "MockTrueCurrencyWithGasRefund"
+      ]
+    },
+    "/Users/yubor/Downloads/truefi/smart-contracts/contracts/true-currencies/mocks/MockGasRefundToken.sol": {
+      "lastModificationDate": 1607979178346,
+      "contentHash": "59ec9c740e95854c95e5dbd2a2ea9ede",
+      "sourceName": "contracts/true-currencies/mocks/MockGasRefundToken.sol",
+      "solcConfig": {
+        "version": "0.6.10",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./MockTrueCurrencyWithGasRefund.sol"
+      ],
+      "versionPragmas": [
+        "0.6.10"
+      ],
+      "artifacts": [
+        "MockGasRefundToken"
+      ]
+    },
+    "/Users/yubor/Downloads/truefi/smart-contracts/contracts/true-currencies/mocks/TokenControllerMock.sol": {
+      "lastModificationDate": 1607979178348,
+      "contentHash": "7bc1b73e29dd6a9f60508d5c3f4df36f",
+      "sourceName": "contracts/true-currencies/mocks/TokenControllerMock.sol",
+      "solcConfig": {
+        "version": "0.6.10",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../TokenController.sol"
+      ],
+      "versionPragmas": [
+        "0.6.10"
+      ],
+      "artifacts": [
+        "TokenControllerMock",
+        "TokenControllerPauseMock"
+      ]
+    },
+    "/Users/yubor/Downloads/truefi/smart-contracts/contracts/true-currencies/utils/TokenFaucet.sol": {
+      "lastModificationDate": 1607979178350,
+      "contentHash": "c1e4b05b3d6a26567b5e9936c9c34b3c",
+      "sourceName": "contracts/true-currencies/utils/TokenFaucet.sol",
+      "solcConfig": {
+        "version": "0.6.10",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../mocks/TokenControllerMock.sol"
+      ],
+      "versionPragmas": [
+        "0.6.10"
+      ],
+      "artifacts": [
+        "TokenFaucet"
+      ]
+    },
+    "/Users/yubor/Downloads/truefi/smart-contracts/contracts/proxy/TimeOwnedUpgradeabilityProxy.sol": {
+      "lastModificationDate": 1607979178336,
+      "contentHash": "d636db7ed9a22514c32599b3978b4ee5",
+      "sourceName": "contracts/proxy/TimeOwnedUpgradeabilityProxy.sol",
+      "solcConfig": {
+        "version": "0.6.10",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./OwnedUpgradeabilityProxy.sol"
+      ],
+      "versionPragmas": [
+        "0.6.10"
+      ],
+      "artifacts": [
+        "TimeOwnedUpgradeabilityProxy"
+      ]
+    },
+    "/Users/yubor/Downloads/truefi/smart-contracts/contracts/true-currencies/mocks/MockHook.sol": {
+      "lastModificationDate": 1607979178347,
+      "contentHash": "95701b29bc1fb325bbd98f06c56f5f3b",
+      "sourceName": "contracts/true-currencies/mocks/MockHook.sol",
+      "solcConfig": {
+        "version": "0.6.10",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "0.6.10"
+      ],
+      "artifacts": [
+        "MockHook"
+      ]
+    },
+    "/Users/yubor/Downloads/truefi/smart-contracts/contracts/true-currencies/utils/ForceEther.sol": {
+      "lastModificationDate": 1607979178350,
+      "contentHash": "6a92312817bc582f91db82ee3829a872",
+      "sourceName": "contracts/true-currencies/utils/ForceEther.sol",
+      "solcConfig": {
+        "version": "0.6.10",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "0.6.10"
+      ],
+      "artifacts": [
+        "ForceEther"
+      ]
+    },
+    "/Users/yubor/Downloads/truefi/smart-contracts/contracts/trusttoken/governance/GovernorAlpha.sol": {
+      "lastModificationDate": 1607995052809,
+      "contentHash": "2044573e7af7fedb0d42b926261157f5",
+      "sourceName": "contracts/trusttoken/governance/GovernorAlpha.sol",
+      "solcConfig": {
+        "version": "0.6.10",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.6.10"
+      ],
+      "artifacts": [
+        "GovernorAlpha",
+        "TimelockInterface",
+        "TrustTokenInterface"
+      ]
+    },
+    "/Users/yubor/Downloads/truefi/smart-contracts/node_modules/hardhat/console.sol": {
+      "lastModificationDate": 1608077056943,
+      "contentHash": "c20b2460755f312099ccd61427237ded",
+      "sourceName": "hardhat/console.sol",
+      "solcConfig": {
+        "version": "0.6.10",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.4.22 <0.8.0"
+      ],
+      "artifacts": [
+        "console"
+      ]
+    }
+  }
+}

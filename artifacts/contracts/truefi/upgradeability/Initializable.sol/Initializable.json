@@ -1,0 +1,10 @@
+{
+  "_format": "hh-sol-artifact-1",
+  "contractName": "Initializable",
+  "sourceName": "contracts/truefi/upgradeability/Initializable.sol",
+  "abi": [],
+  "bytecode": "0x6080604052348015600f57600080fd5b50603f80601d6000396000f3fe6080604052600080fdfea2646970667358221220a44fce1056ed9646174d9f5345d80528eba682e5132a9c9c1bf94e7b0f3f822264736f6c634300060a0033",
+  "deployedBytecode": "0x6080604052600080fdfea2646970667358221220a44fce1056ed9646174d9f5345d80528eba682e5132a9c9c1bf94e7b0f3f822264736f6c634300060a0033",
+  "linkReferences": {},
+  "deployedLinkReferences": {}
+}
